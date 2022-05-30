@@ -11,7 +11,7 @@ body{
   font-family: var(--ff-primary);
   background-color: var(--cl-light-grey);
   color: var(--cl-dark-ocean);
-  overflow: hidden;
+  
 }
 .welcome--page_container{
   text-align: center;
