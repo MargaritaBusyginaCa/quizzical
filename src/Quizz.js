@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react"
 import {nanoid} from 'nanoid';
-function Quizz ({questions, setQuestions}){
+function Quizz ({questions, setQuestions, startGame, setStartGame}){
     const [count, setCount] = useState(0)
     function selectAnswer(questionId, answerObject){
         /*If one of the elements that have different id from the passedf objects has 
@@ -41,13 +41,18 @@ function Quizz ({questions, setQuestions}){
                 }
             }
         }
-        
+        setStartGame(prevState => !prevState)
     }
     return(
         <div>
             {questionsDisplay}
-            <button className="finish--btn" onClick={calculateScore}>Submit Answers</button>
-            <h1>You scored: {count} / 6</h1>
+            <div className="finish-game--container">
+              {!startGame ? <button className="finish--btn" onClick={calculateScore}>Submit Answers</button>
+                         : <button className="finish--btn">Start Again</button>}
+              {startGame && <h1>You scored: {count} / 6</h1>}
+            </div>
+            
+            
         </div>
     )
 }
