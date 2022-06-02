@@ -87,13 +87,14 @@ hr{
 }
 .finish-game--container{
     display: flex;
-    
     align-items: baseline;
+    
 }
 .finish-game--container h1{
-    margin: 0;
-    padding: 0;
+    
+
 }
 .finish--btn{
+    margin: 20px;
     cursor: pointer;
 }

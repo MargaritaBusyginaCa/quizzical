@@ -16,6 +16,7 @@ function App() {
   
   useEffect(() => {
     setCount(0)
+    console.log(count)
     /*Temporary array for storing data within the API call*/
     let questionsArray = []
     fetch("https://opentdb.com/api.php?amount=6&difficulty=easy&type=multiple")
