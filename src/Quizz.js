@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react"
 import {nanoid} from 'nanoid';
 import './App.css';
-function Quizz ({questions, setQuestions, startGame, setStartGame, setReload}){
-    const [count, setCount] = useState(0)
+function Quizz ({questions, setQuestions, startGame, setStartGame, setReload, setCount, count}){
+    
     
     function selectAnswer(questionId, answerObject){
         let classes = ""
@@ -40,6 +40,7 @@ function Quizz ({questions, setQuestions, startGame, setStartGame, setReload}){
             for (let answer of question.answers){
                 if(answer.isSelected && answer.isCorrect){
                     setCount(prevCount => prevCount + 1)
+                    console.log(startGame)
                 }
             }
         }

@@ -11,10 +11,11 @@ function App() {
   const [startGame, setStartGame] = useState(false)
   const [questions, setQuestions] = useState([])
   const [reload, setReload] = useState(false)
-
-  function gameStart(){setStartGame(true)}
+  const [count, setCount] = useState(0)
+  function gameStart(){setStartGame(true) }
   
   useEffect(() => {
+    setCount(0)
     /*Temporary array for storing data within the API call*/
     let questionsArray = []
     fetch("https://opentdb.com/api.php?amount=6&difficulty=easy&type=multiple")
@@ -50,6 +51,8 @@ function App() {
   return array
 }
 
+
+
   return (
     <div>
       <Switch>
@@ -57,7 +60,9 @@ function App() {
            <Welcome handleClick={gameStart}/>
          </Route>
          <Route path="/quizz">
-           <Quizz questions={questions} setQuestions={setQuestions} startGame={startGame} setStartGame={setStartGame} setReload={setReload}/>
+           <Quizz questions={questions} setQuestions={setQuestions} startGame={startGame} setStartGame={setStartGame} setReload={setReload}
+                  count={count} setCount={setCount}
+                 />
           </Route>
        </Switch>
     </div>
