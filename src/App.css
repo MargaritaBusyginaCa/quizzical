@@ -11,7 +11,7 @@ body{
   font-family: var(--ff-primary);
   background-color: var(--cl-light-grey);
   color: var(--cl-dark-ocean);
-  
+  overflow-x: hidden;
 }
 .welcome--page_container{
   text-align: center;
@@ -47,6 +47,7 @@ body{
     top: -100px;
     right: -100px;
     border-radius: 50%;
+    z-index: -1;
 }
 .blue-circle{
     position: absolute;
@@ -56,8 +57,34 @@ body{
     bottom: -100px;
     left: -100px;
     border-radius: 50%;
+    z-index: -1;
 }
 
 .quizz--question__container{
     padding: 1rem;
 }
+
+.quiz-container{
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+.answers--container button{
+  min-width: 60px;
+  padding: 0.6rem;
+  margin: 6px;
+  border-radius: 15px;
+  background-color: var(--cl-light-grey);
+  cursor: pointer;
+}
+.selected-btn:focus{
+    background-color:yellow;
+}
+.selected-answer{
+    background-color: black;
+}
+hr{
+    display: block; height: 1px;
+    border: 0; border-top: 1px solid rgba(214, 214, 214, 0.623); 
+}
+

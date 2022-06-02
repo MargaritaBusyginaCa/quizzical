@@ -1,4 +1,5 @@
 import {Route, Link, Switch} from 'react-router-dom'
+
 import Quizz from './Quizz'
 function Welcome(props){
   return(
@@ -6,7 +7,7 @@ function Welcome(props){
           <div className='lemon-circle'></div>
           <h1>Quizzical</h1>
           <p>Fun way to test your knowledge</p>
-          <Link to="/quizz" className='primary--button' onClick={props.handleClick}>Start Quizz</Link>
+          <Link to="/quizz" className='primary--button' onClick={props.setStartGame}>Start Quizz</Link>
           <div className='blue-circle'></div>
               
       </div>

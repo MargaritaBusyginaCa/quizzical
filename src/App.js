@@ -10,8 +10,7 @@ import Quizz from './Quizz';
 function App() {
   const [startGame, setStartGame] = useState(false)
   const [questions, setQuestions] = useState([])
-  const [finalScore, setFinalScore] = useState(0)
-  // const [reload, setReload] = useState(false)
+  const [reload, setReload] = useState(false)
 
   function gameStart(){setStartGame(true)}
   
@@ -38,7 +37,7 @@ function App() {
      })
      /*End an API call with setting questions state with the new array of objects*/
      .then(() => setQuestions(questionsArray))
-  }, [])
+  }, [reload])
 
  function shuffleAnswers(array){
   let currentIndex = array.length
@@ -58,7 +57,7 @@ function App() {
            <Welcome handleClick={gameStart}/>
          </Route>
          <Route path="/quizz">
-           <Quizz questions={questions} setQuestions={setQuestions} startGame={startGame} setStartGame={setStartGame}/>
+           <Quizz questions={questions} setQuestions={setQuestions} startGame={startGame} setStartGame={setStartGame} setReload={setReload}/>
           </Route>
        </Switch>
     </div>
