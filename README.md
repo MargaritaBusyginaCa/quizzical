@@ -22,6 +22,6 @@ You may also see any lint errors in the console.
 
 ##  👋
 
-Thanks for checking out one of my projects built with
+Thanks for checking out one of my projects
 
 Completed by Margarita Busygina
