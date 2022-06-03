@@ -4,9 +4,9 @@
 
 ## What I used to build this project
 
--React
--Trivia API (https://opentdb.com/api_config.php)
--CSS and HTML
+* React
+* Trivia API (https://opentdb.com/api_config.php)
+* CSS and HTML
 
 ## Available Scripts
 
