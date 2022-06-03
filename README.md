@@ -1,6 +1,6 @@
 # Quizzical - built with React
 
-![Design preview](./public/quizzical-screen.PNG)
+![Design preview](./src/quizzical-screen.PNG)
 
 ## What I used to build this project
 
