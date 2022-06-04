@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import { Link, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import {useState, useEffect} from "react"
 import {nanoid} from 'nanoid';
 import he from "he"
@@ -11,14 +10,11 @@ function App() {
   const [startGame, setStartGame] = useState(false)
   const [questions, setQuestions] = useState([])
   const [reload, setReload] = useState(false)
-  const [count, setCount] = useState(0)
- 
  
   function gameStart(){setStartGame(true) }
   
   useEffect(() => {
-    setCount(0)
-    console.log(count)
+    
     /*Temporary array for storing data within the API call*/
     let questionsArray = []
     fetch("https://opentdb.com/api.php?amount=6&difficulty=easy&type=multiple")
@@ -46,11 +42,11 @@ function App() {
 
  function shuffleAnswers(array){
   let currentIndex = array.length
-  while (currentIndex != 0){
+  while (currentIndex !== 0){
     let randomIndex = Math.floor(Math.random() * currentIndex)
     currentIndex --
 
-    [array[currentIndex], array [randomIndex]] = [array[randomIndex], array[currentIndex]]
+    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]]
  }
   return array
 }
@@ -64,8 +60,7 @@ function App() {
            <Welcome handleClick={gameStart}/>
          </Route>
          <Route path="/quizz">
-           <Quizz questions={questions} setQuestions={setQuestions} startGame={startGame} setStartGame={setStartGame} setReload={setReload}
-                  count={count} setCount={setCount}
+           <Quizz questions={questions} startGame={startGame} setStartGame={setStartGame} setReload={setReload}
                  />
           </Route>
        </Switch>

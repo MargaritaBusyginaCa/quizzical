@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react"
 import {nanoid} from 'nanoid';
 import './App.css';
-function Quizz ({questions, setQuestions, startGame, setStartGame, setReload, setStyles, styles}){
+function Quizz ({questions, startGame, setStartGame, setReload}){
     const [render, setRender ] = useState(false)
     const [count, setCount] = useState(0)
     let disabledButton = startGame ? true : false
@@ -12,7 +12,7 @@ function Quizz ({questions, setQuestions, startGame, setStartGame, setReload, se
         for(let question of questions){
             if(question.id === questionId){
                 for (let answer of question.answers){
-                    if(answer.id!==answerObject.id && answer.isSelected == true){
+                    if(answer.id !== answerObject.id && answer.isSelected ){
                         answer.isSelected=false 
                     }
                     answerObject.isSelected = true  
