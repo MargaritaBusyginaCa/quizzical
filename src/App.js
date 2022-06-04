@@ -12,6 +12,8 @@ function App() {
   const [questions, setQuestions] = useState([])
   const [reload, setReload] = useState(false)
   const [count, setCount] = useState(0)
+ 
+ 
   function gameStart(){setStartGame(true) }
   
   useEffect(() => {
@@ -27,6 +29,7 @@ function App() {
        questionsArray = questionsArray.map(q => {
         /*Because we have a nested array (question -> correct_answer -> incorrect_answers (3 elements) we need to map through the
         array of incorrenct_answers as well and return it with the attributes that we need*/
+        
         let answersArray = q.incorrect_answers.map( wrongAnswer => {
           return{id:nanoid(), value:he.decode(wrongAnswer), isCorrect:false, isSelected:false}
         })

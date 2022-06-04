@@ -74,13 +74,12 @@ body{
   padding: 0.6rem;
   margin: 6px;
   border-radius: 15px;
-  background-color: var(--cl-light-grey);
+  
   cursor: pointer;
+  border: solid 2px rgb(133, 177, 235);
 }
-.selected-btn:focus{
-    background-color:rgba(218, 218, 218, 0.208);
-    padding:1rem;
-}
+
+
 hr{
     display: block; height: 1px;
     border: 0; border-top: 1px solid rgba(214, 214, 214, 0.623); 
@@ -90,11 +89,24 @@ hr{
     align-items: baseline;
     
 }
-.finish-game--container h1{
-    
-
-}
 .finish--btn{
     margin: 20px;
     cursor: pointer;
+}
+.selected-btn{
+    background-color:rgba(120, 160, 160, 0.303);
+}
+.correct-answer{
+    background-color:rgba(125, 217, 115, 0.694);
+}
+.wrong-answer{
+    background-color:rgba(217, 115, 115, 0.694);
+}
+.correct-answer-selected:disabled{
+    background-color:rgba(47, 231, 22, 0.881);
+    color: black;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+button:disabled{
+    color:rgb(98, 98, 98);
 }
